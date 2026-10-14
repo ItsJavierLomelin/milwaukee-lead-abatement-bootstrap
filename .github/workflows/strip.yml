@@ -1,0 +1,22 @@
+name: Remove stock-image footer line
+on:
+  workflow_dispatch:
+  push:
+    paths: ['.github/workflows/strip.yml']
+permissions:
+  contents: write
+jobs:
+  strip:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Strip line
+        run: |
+          set -e
+          git ls-files '*.html' 'source/pages.json' | xargs sed -i 's/ *Stock images are illustrative, not completed projects\.//g'
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          if git diff --cached --quiet; then echo none; else git commit -m 'Remove stock-image footer line'; git pull --rebase origin main; git push; fi
