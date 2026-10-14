@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - '1-payload.tgz'
+      - '2-1-payload.tgz'
 permissions:
   contents: write
 jobs:
@@ -12,8 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          tar xzf 1-payload.tgz
-          rm 1-payload.tgz
+          tar xzf 2-1-payload.tgz
+          rm 1-payload.tgz 2-1-payload.tgz
           git config user.name "github-actions"
           git config user.email "actions@users.noreply.github.com"
           git add -A
