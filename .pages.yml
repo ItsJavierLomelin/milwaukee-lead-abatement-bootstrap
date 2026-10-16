@@ -1,0 +1,96 @@
+# Pages CMS configuration - https://pagescms.org
+# Pilot: edit this site's pages in the browser at https://app.pagescms.org
+# Pages are plain HTML, so they open in a code editor (no form fields).
+# Create/rename/delete are locked so the site structure cannot be broken.
+media:
+  input: assets/img
+  output: /milwaukee-lead-abatement-bootstrap/assets/img
+content:
+  - name: main-pages
+    label: Main pages
+    type: group
+    items:
+      - name: home
+        label: Home
+        type: file
+        path: index.html
+        format: code
+        operations:
+          create: false
+          delete: false
+      - name: services-index
+        label: Services overview
+        type: file
+        path: services.html
+        format: code
+        operations:
+          create: false
+          delete: false
+      - name: areas-index
+        label: Service areas overview
+        type: file
+        path: areas.html
+        format: code
+        operations:
+          create: false
+          delete: false
+      - name: guides-index
+        label: Guides overview
+        type: file
+        path: guides.html
+        format: code
+        operations:
+          create: false
+          delete: false
+      - name: blog-index
+        label: Blog overview
+        type: file
+        path: blog.html
+        format: code
+        operations:
+          create: false
+          delete: false
+      - name: contact
+        label: Contact
+        type: file
+        path: contact.html
+        format: code
+        operations:
+          create: false
+          delete: false
+  - name: services
+    label: Service pages
+    type: collection
+    path: services
+    format: code
+    operations:
+      create: false
+      rename: false
+      delete: false
+  - name: areas
+    label: Area pages
+    type: collection
+    path: areas
+    format: code
+    operations:
+      create: false
+      rename: false
+      delete: false
+  - name: guides
+    label: Guides
+    type: collection
+    path: guides
+    format: code
+    operations:
+      create: false
+      rename: false
+      delete: false
+  - name: blog
+    label: Blog posts
+    type: collection
+    path: blog
+    format: code
+    operations:
+      create: false
+      rename: false
+      delete: false
